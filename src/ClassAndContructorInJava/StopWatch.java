@@ -29,7 +29,7 @@ public class StopWatch {
     }
 
 
-    //thoi gian troi tinh bang giay
+    //thoi gian troi tinh bang giayy
     public long getElapsedTimeSecs() {
         long elapsed;
         if (running) {
