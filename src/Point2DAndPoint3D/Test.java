@@ -8,6 +8,8 @@ public class Test {
         Point3D point3D = new Point3D(1,3,8);
         System.out.println(point3D);
         point3D.setXYZ(1,7,8);
+        System.out.println(point3D.toString());
 
     }
+
 }
