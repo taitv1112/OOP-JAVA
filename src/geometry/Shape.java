@@ -1,6 +1,8 @@
 package geometry;
 
-public class Shape {
+import java.util.Comparator;
+
+public class Shape{
     private String color ;
     private boolean filled;
 
@@ -32,4 +34,5 @@ public class Shape {
     public String toString() {
         return "A Shape with color of "+color+ " and " + filled;
     }
+
 }

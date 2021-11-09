@@ -35,4 +35,9 @@ public class Square extends Rectangle{
                 + getSide()
                 + ", which is a subclass of "+super.toString();
     }
+
+    @Override
+    public void resize(double percent) {
+        super.resize(percent);
+    }
 }

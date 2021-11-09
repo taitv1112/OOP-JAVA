@@ -1,6 +1,6 @@
 package geometry;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Resizeable{
     private double radius ;
 
     public Circle() {
@@ -32,6 +32,12 @@ public class Circle extends Shape {
     }
     @Override
     public String toString() {
-        return "A Circle with "+this.radius +"which is a subclass of" +" "+ super.toString();
+        return "A Circle with "+this.radius +"which is a subclass of" +" "+ super.toString() + " Dien Tich= "+getArea();
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.radius= percent * this.radius;
+        System.out.println("Kich thước hình đã thay đổi " + percent + " lần."+ getArea());
     }
 }

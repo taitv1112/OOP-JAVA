@@ -1,6 +1,7 @@
 package geometry;
 
-public class Triangle extends Shape {
+
+public class Triangle extends Shape implements Resizeable{
     private double side1, side2, side3;
 
     public Triangle() {
@@ -48,7 +49,7 @@ public class Triangle extends Shape {
 
     public double getArea() {
         if(checkSide()){
-            double p = this.side1 + this.side2 + this.side3;
+            double p = (this.side1 + this.side2 + this.side3)/2;
             return Math.sqrt(p * (p - this.side1) * (p - this.side2) * (p - this.side3));
         }
         else return -1;
@@ -86,5 +87,15 @@ public class Triangle extends Shape {
                     '}' + super.toString();
         }else
         return "Nhập lại ba cạnh của tam giác ";
+    }
+
+
+    @Override
+    public void resize(double percent) {
+        this.side1 = percent*this.side1/3;
+        this.side2 = percent*this.side2/3;
+        this.side3 = percent*this.side3/3;
+        System.out.println("Kich thước hình đã thay đổi " + percent + " lần." + getArea());
+
     }
 }

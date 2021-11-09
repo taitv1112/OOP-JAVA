@@ -1,8 +1,6 @@
 package geometry;
 
-import geometry.Circle;
-
-public class ComparableCircle extends Circle implements Comparable<ComparableCircle>{
+public class ComparableCircle extends Circle implements Comparable<ComparableCircle> {
     public ComparableCircle() {
     }
 
@@ -11,13 +9,18 @@ public class ComparableCircle extends Circle implements Comparable<ComparableCir
     }
 
     public ComparableCircle(String color, boolean filled, double radius) {
-            super(color, filled, radius);
-        }
+        super(color, filled, radius);
+    }
 
     @Override
     public int compareTo(ComparableCircle o) {
         if (getRadius() > o.getRadius()) return 1;
         else if (getRadius() < o.getRadius()) return -1;
         else return 1;
+    }
+
+    @Override
+    public void resize(double y) {
+
     }
 }
