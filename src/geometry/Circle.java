@@ -32,6 +32,6 @@ public class Circle extends Shape {
     }
     @Override
     public String toString() {
-        return "A Circle with "+this.radius +"which is a subclass of" + super.toString();
+        return "A Circle with "+this.radius +"which is a subclass of" +" "+ super.toString();
     }
 }
