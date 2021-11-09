@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class demo {
@@ -58,18 +59,14 @@ public class demo {
 //    }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Chào bạn đến với GAME AI LÀ TRIỆU PHÚ");
-        System.out.println("LỚP C0921K1 CÓ BAO NHIÊU BẠN NỮ");
-        System.out.println("1.1 BẠN");
-        System.out.println("2.2 BẠN");
-        System.out.println("3.3 BẠN");
-        System.out.println("4.4 BẠN");
-        int choice = input.nextInt();
-        if (choice == 3) {
-            System.out.println("Đúng");
-        } else {
-            System.out.println("Sai");
-        }
+        int[] arr1 = {8,9};
+        int[] arr2 = {1,2,3,4,5,6,7};
+        int[] arr3 = new int[6];
+        int index = 2;
+        System.arraycopy(arr2,0,arr3,0,index);
+        System.arraycopy(arr2,(index+1),arr3,index,arr3.length-index);
+        System.out.println(Arrays.toString(arr3));
+        System.out.println(Arrays.toString(arr2));
+
     }
 }
