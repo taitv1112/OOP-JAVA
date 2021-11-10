@@ -8,7 +8,7 @@ public class TestMain {
         Scanner sc = new Scanner(System.in);
         NhanVien[] nhanViens = new NhanVien[3];
         nhanViens[0] = new NhanVien("Toàn", 20, "nam", 1);
-        nhanViens[1] = new NhanVien("An", 22, "nữ", 2);
+        nhanViens[1] = new NhanVien("An", 22, "nữ", 4);
         nhanViens[2] = new NhanVien("Nhiên", 24, "nam", 3);
         while(true){
             System.out.println("Menu:");
@@ -18,15 +18,19 @@ public class TestMain {
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
+                    arraysSortID(nhanViens);
                     show(nhanViens);break;
                 case 2:
+                    arraysSortID(nhanViens);
                     nhanViens = add(nhanViens);
                     show(nhanViens);
                     break;
                 case 3:
                     System.out.println("Nhập id cần xóa: ");
+                    arraysSortID(nhanViens);
                     int id = sc.nextInt();
                     nhanViens = delete(nhanViens,id);
+                    arraysSortID(nhanViens);
                     show(nhanViens);
             }
         }
@@ -66,5 +70,10 @@ public class TestMain {
         System.arraycopy(nhanViens,0,newNV,0,index);
         System.arraycopy(nhanViens,(index+1),newNV,index,newNV.length-index);
         return newNV;
+    }
+    public static NhanVien[] arraysSortID(NhanVien[] nhanViens){
+        NhanVienComparator nhanVienComparator = new NhanVienComparator();
+        Arrays.sort(nhanViens,nhanVienComparator);
+    return nhanViens;
     }
 }

@@ -1,6 +1,6 @@
 package geometry;
 
-public class Square extends Rectangle{
+public class Square extends Rectangle implements Colorable{
     public Square() {
     }
 
@@ -33,11 +33,16 @@ public class Square extends Rectangle{
     public String toString() {
         return "A Square with side="
                 + getSide()
-                + ", which is a subclass of "+super.toString();
+                + ", which is a subclass of "+super.toString() + " Dien Tich= "+getArea();
     }
 
     @Override
     public void resize(double percent) {
         super.resize(percent);
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides");
     }
 }

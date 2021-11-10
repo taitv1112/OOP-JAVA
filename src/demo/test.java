@@ -5,8 +5,5 @@ public class test {
         NhanVien nv1 = new NhanVien();
         NhanVien nv2 = new TruongPhong();
         TruongPhong nv3 = new TruongPhong();
-
-
-
     }
 }
