@@ -3,21 +3,29 @@ package LuyenTap;
 import java.util.Scanner;
 
 public class NhanVien {
+    private int id;
     private String name;
     private int age;
     private String sex;
-    private int id;
+
 
     public NhanVien() {
     }
 
-    public NhanVien(String name, int age, String sex, int id) {
+    public NhanVien(int id, String name, int age, String sex) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.sex = sex;
-        this.id = id;
     }
 
+    public NhanVien(String name, int age, String sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.id = idnumber++;
+    }
+public static int idnumber=0;
     public String getName() {
         return name;
     }
@@ -48,6 +56,11 @@ public class NhanVien {
 
     public void setId(int id) {
         this.id = id;
+    }
+    public void setAll(String name, int age, String sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
     }
 
     @Override
