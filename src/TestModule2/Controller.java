@@ -13,6 +13,7 @@ public class Controller {
         System.out.println("Nhập số điện thoại nhân viên: ");
         int phoneNumbers = sc.nextInt();
         System.out.println("Nhập địa chỉ của nhân viên: ");
+        sc.nextLine();
         String address = sc.nextLine();
         Staff staff = new Staff(name, phoneNumbers, address);
         return staff;
@@ -65,10 +66,36 @@ public class Controller {
             System.out.println("Nhập số điện thoại nhân viên: ");
             int phoneNumbers = sc.nextInt();
             System.out.println("Nhập địa chỉ của nhân viên: ");
+            sc.nextLine();
             String address = sc.nextLine();
             staffs[index].setAll(name,phoneNumbers,address);
         } else {
             System.out.println("id: " + id + " bạn nhập không tồn tại.");
+        }
+    }
+    public static void menu(){
+        while (true) {
+            System.out.println("Menu: ");
+            System.out.println("1.Thêm Nhân Viên ");
+            System.out.println("2.Xóa Nhân Viên ");
+            System.out.println("3.Hiển Thị Nhân Viên ");
+            System.out.println("4.Sửa Nhân Viên ");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    Staff staff = Controller.createStaff();
+                    Controller.addStaff(staff);
+                    break;
+                case 2:
+                    Controller.deleteStaff();
+                    break;
+                case 3:
+                    Controller.showStaff();
+                    break;
+                case 4:
+                    Controller.editStaff();
+                    break;
+            }
         }
     }
 }
