@@ -68,7 +68,7 @@ public class Controller {
             sc.nextLine();
             String name = sc.nextLine();
             System.out.println("Nhập số điện thoại nhân viên: ");
-            int phoneNumbers = sc.nextInt();
+            int phoneNumbers = Integer.parseInt(sc.nextLine());
             System.out.println("Nhập địa chỉ của nhân viên: ");
             sc.nextLine();
             String address = sc.nextLine();
