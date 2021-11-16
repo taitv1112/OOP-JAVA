@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Controller {
     static Staff[] staffs = new Staff[0];
+    static {
+        staffs[0]= new Staff("Tai",969587180,"hanoi");
+    }
     static Scanner sc = new Scanner(System.in);
 
     public static Staff createStaff() {
@@ -12,7 +15,7 @@ public class Controller {
         sc.nextLine();
         String name = sc.nextLine();
         System.out.println("Nhập số điện thoại nhân viên: ");
-        int phoneNumbers = sc.nextInt();
+        int phoneNumbers = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập địa chỉ của nhân viên: ");
         sc.nextLine();
         String address = sc.nextLine();
