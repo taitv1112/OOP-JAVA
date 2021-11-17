@@ -6,6 +6,7 @@ import java.util.Queue;
 
 public class Demerging<E> {
     public static void main(String[] args) {
+        NhanVien nv5 = new NhanVien("lam", NhanVien.NU, 16);
         NhanVien nv1 = new NhanVien("tai", NhanVien.NAM, 27);
         NhanVien nv2 = new NhanVien("thao", NhanVien.NU, 29);
         NhanVien nv3 = new NhanVien("dat", NhanVien.NAM, 28);
@@ -15,6 +16,7 @@ public class Demerging<E> {
         nhanViens.offer(nv2);
         nhanViens.offer(nv3);
         nhanViens.offer(nv4);
+        nhanViens.offer(nv5);
         for (NhanVien nv:nhanViens) {
             System.out.println(nv.toString());
         }
@@ -28,14 +30,12 @@ public class Demerging<E> {
                     nam.offer(nv);
                 }
             }
-            nhanViens.clear();
-            for (NhanVien nv:nu) {
-                nhanViens.offer(nv);
-            }
-            for (NhanVien nv:nam) {
-                nhanViens.offer(nv);
-            }
         }
+        nhanViens.clear();
+        nhanViens.addAll(nu);
+        nhanViens.addAll(nam);
+
+
         System.out.println("-----------------------------------");
         for (NhanVien nv:nhanViens) {
             System.out.println(nv.toString());
