@@ -24,5 +24,6 @@ public class TestMap {
         linkedHashMap.put("Lewis", 29);
         linkedHashMap.put("Cook", 29);
         System.out.println("\nThe age for " + "Lewis is " + linkedHashMap.get("Lewis"));
+        System.out.println("\nThe age for " + "Lewis is " + linkedHashMap.get("Lewis"));
     }
 }
