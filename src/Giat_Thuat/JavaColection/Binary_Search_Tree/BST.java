@@ -57,5 +57,15 @@ public class BST <E extends Comparable<E>> extends AbstractTree<E>{
         System.out.println(root.element + " ");
         inorder(root.right);
     }
+    public void postOder(TreeNode<E> root){
+        if(root == null)return;
+        postOder(root.left);
+        postOder(root.right);
+        System.out.println(root.element);
+    }
+    public void postOder(){
+        postOder(root);
+    }
+    
 
 }
