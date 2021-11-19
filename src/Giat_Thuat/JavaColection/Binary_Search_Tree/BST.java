@@ -1,6 +1,8 @@
 package Giat_Thuat.JavaColection.Binary_Search_Tree;
 
-public class BST <E extends Comparable<E>> extends AbstractTree<E>{
+import Giat_Thuat.LinkedListPractice.Linked_List_Bro.DualLinkedList;
+
+public class BST<E extends Comparable<E>> extends AbstractTree<E> {
     protected TreeNode<E> root;
     protected int size = 0;
 
@@ -38,6 +40,7 @@ public class BST <E extends Comparable<E>> extends AbstractTree<E>{
         size++;
         return true; /*element inserted successfully*/
     }
+
     protected TreeNode<E> createNewNode(E e) {
         return new TreeNode<>(e);
     }
@@ -46,6 +49,7 @@ public class BST <E extends Comparable<E>> extends AbstractTree<E>{
     public int getSize() {
         return size;
     }
+
     @Override
     public void inorder() {
         inorder(root);
@@ -57,15 +61,56 @@ public class BST <E extends Comparable<E>> extends AbstractTree<E>{
         System.out.println(root.element + " ");
         inorder(root.right);
     }
-    public void postOder(TreeNode<E> root){
-        if(root == null)return;
+
+    public void postOder(TreeNode<E> root) {
+        if (root == null) return;
         postOder(root.left);
         postOder(root.right);
         System.out.println(root.element);
     }
-    public void postOder(){
+
+    public void postOder() {
         postOder(root);
     }
-    
 
+    public TreeNode<E> search(TreeNode<E> root, E value) {
+        if (root == null) return root;
+        if (root.element == value) {
+            return root;
+        } else if (root.element.compareTo(value) < 0) {
+            return search(root.right, value);
+        }
+        return search(root.left, value);
+
+    }
+
+    void deleteValue(E value) { root = deleteRec(root, value); }
+
+    TreeNode<E> deleteRec(TreeNode<E> root, E value)
+    {
+        if (root == null)
+            return root;
+        if (value.compareTo(root.element)<0)
+            root.left = deleteRec(root.left, value);
+        else if (value.compareTo(root.element)>0)
+            root.right = deleteRec(root.right, value);
+        else {
+            // node with only one child or no child
+            if (root.left == null)
+                return root.right;
+            else if (root.right == null)
+                return root.left;
+            root.element = minValue(root.right);
+            root.right = deleteRec(root.right, root.element);
+        }
+        return root;
+    }
+    public E minValue(TreeNode<E> root) {
+        E min = root.element;
+        while (root.left != null) {
+            min = root.left.element;
+            root = root.left;
+        }
+        return min;
+    }
 }
