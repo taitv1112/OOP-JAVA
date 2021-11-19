@@ -73,10 +73,24 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
         postOder(root);
     }
 
-    public TreeNode<E> search(TreeNode<E> root, E value) {
-        if (root == null) return root;
+    public void preOrder(TreeNode<E> root) {
+        if (root == null) return;
+        System.out.println(root.element);
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+    public void preOrder() {
+        preOrder(root);
+    }
+
+public boolean  searchValue(E value){
+       return search(root,value);
+}
+    public boolean search(TreeNode<E> root, E value) {
+        if (root == null) return false;
         if (root.element == value) {
-            return root;
+            return true;
         } else if (root.element.compareTo(value) < 0) {
             return search(root.right, value);
         }
@@ -84,15 +98,16 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
 
     }
 
-    void deleteValue(E value) { root = deleteRec(root, value); }
+    void deleteValue(E value) {
+        root = deleteRec(root, value);
+    }
 
-    TreeNode<E> deleteRec(TreeNode<E> root, E value)
-    {
+    TreeNode<E> deleteRec(TreeNode<E> root, E value) {
         if (root == null)
             return root;
-        if (value.compareTo(root.element)<0)
+        if (value.compareTo(root.element) < 0)
             root.left = deleteRec(root.left, value);
-        else if (value.compareTo(root.element)>0)
+        else if (value.compareTo(root.element) > 0)
             root.right = deleteRec(root.right, value);
         else {
             // node with only one child or no child
@@ -105,6 +120,7 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
         }
         return root;
     }
+
     public E minValue(TreeNode<E> root) {
         E min = root.element;
         while (root.left != null) {
