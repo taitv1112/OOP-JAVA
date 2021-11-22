@@ -16,6 +16,9 @@ public class Circle extends Shape implements Resizeable{
         this.radius = radius;
     }
 
+    public Circle(double radius, String color, int radius1) {
+    }
+
     public double getRadius() {
         return radius;
     }

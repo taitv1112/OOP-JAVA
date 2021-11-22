@@ -1,8 +1,9 @@
 package Giat_Thuat.ThuatToanSapXep;
 
 public class SelectionSort {
-    static double[] list = {1, 9, 4.5, 6.6, 5.7, -4.5};
+    static double[] list = {3,4,5,2,1};
     public static void selectionSort(double[] list) {
+        int count = 0;
         for (int i = 0; i < list.length - 1; i++) {
             /* Find the minimum in the list[i..list.length-1] */
             double currentMin = list[i];
@@ -20,7 +21,9 @@ public class SelectionSort {
                 list[currentMinIndex] = list[i];
                 list[i] = currentMin;
             }
+            count++;
         }
+        System.out.println(count);
     }
     public static void main(String[] args) {
         selectionSort(list);

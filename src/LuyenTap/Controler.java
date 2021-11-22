@@ -25,7 +25,7 @@ public class Controler {
         return newNV;
     }
     public static NhanVien[] delete(NhanVien[] nhanViens,int id){
-        int index=0;
+        int index=-1;
         for (int i = 0; i < nhanViens.length; i++) {
             if (nhanViens[i].getId() == id) {
                 index= i;
@@ -42,7 +42,7 @@ public class Controler {
         return nhanViens;
     }
     public static NhanVien[] editId(NhanVien[] nhanViens,int id){
-        int index = 0;
+        int index = -1;
         for (int i = 0; i < nhanViens.length; i++) {
             if(nhanViens[i].getId()==id){
                 index = i;

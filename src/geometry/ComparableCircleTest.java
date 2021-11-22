@@ -1,7 +1,5 @@
 package geometry;
 
-import java.util.Arrays;
-
 public class ComparableCircleTest {
     public static void main(String[] args) {
         ComparableCircle[] circles = new ComparableCircle[3];

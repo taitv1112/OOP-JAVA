@@ -5,27 +5,27 @@ import java.util.Arrays;
 class MyList<E> {
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
-    private E[] data;
+    private E[] elements;
 
     public MyList() {
-        data = (E[]) new Object[DEFAULT_CAPACITY];
+        elements = (E[]) new Object[DEFAULT_CAPACITY];
     }
 
     public MyList(int size) {
-        data = (E[]) new Object[size];
+        elements = (E[]) new Object[size];
     }
 
     private void ensureCapa() {
-        if (size > data.length) {
+        if (size > elements.length) {
             int biggerSize = size * 2 + 1;
-            data = Arrays.copyOf(data, biggerSize);
+            elements = Arrays.copyOf(elements, biggerSize);
         }
     }
 
     public void add(E e) {
         size += 1;
         ensureCapa();
-        data[size - 1] = e;
+        elements[size - 1] = e;
     }
 
     public boolean add(E e, int index) {
@@ -33,9 +33,9 @@ class MyList<E> {
             size += 1;
             ensureCapa();
             for (int i = size - 2; i >= index; i--) {
-                data[i + 1] = data[i];
+                elements[i + 1] = elements[i];
             }
-            data[index] = e;
+            elements[index] = e;
             return true;
         }
         return false;
@@ -43,22 +43,22 @@ class MyList<E> {
 
     public E get(int index) {
         if (index >= 0 && index < size) {
-            return data[index];
+            return elements[index];
         }
         return null;
     }
 
     @Override
     public MyList clone() {
-        MyList<E> clone = new MyList<>(data.length);
-        for (E x : data) {
+        MyList<E> clone = new MyList<>(elements.length);
+        for (E x : elements) {
             clone.add(x);
         }
         return clone;
     }
 
-    public E[] getData() {
-        return this.data;
+    public E[] getelements() {
+        return this.elements;
     }
 
     public int size() {
@@ -68,7 +68,7 @@ class MyList<E> {
     public boolean remove(int index) {
         if (index >= 0 && index < size) {
             for (int i = index; i < size; i++) {
-                data[i] = data[i + 1];
+                elements[i] = elements[i + 1];
             }
             size -= 1;
             return true;
@@ -77,13 +77,13 @@ class MyList<E> {
     }
 
     public void clear() {
-        data = (E[]) new Object[DEFAULT_CAPACITY];
+        elements = (E[]) new Object[DEFAULT_CAPACITY];
         size = 0;
     }
 
     public int indexOf(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i].equals(e)) {
+            if (elements[i].equals(e)) {
                 return i;
             }
         }
@@ -91,7 +91,7 @@ class MyList<E> {
     }
 
     public boolean contains(E e) {
-        for (E x : data) {
+        for (E x : elements) {
             if (e.equals(x)) {
                 return true;
             }

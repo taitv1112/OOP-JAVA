@@ -2,6 +2,18 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BTVN_QLNV_Tuan2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Intro-to-Java-Programming" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Java_BSTree" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MD2-MVC-Student-Manage" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ThinkDataStructures" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TrienKhai_ArrayList_LinkedList" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/BTVN_QLNV_Tuan2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Java_BSTree" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Practice/TrienKhai_ArrayList_LinkedList" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/TrienKhai_ArrayList_LinkedList" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/apj-cylinder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/apj-junit-calculator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/apj-tennis-game" vcs="Git" />
   </component>
 </project>

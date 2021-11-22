@@ -1,7 +1,5 @@
 package geometry;
 
-import java.util.Comparator;
-
 public class Shape{
     private String color ;
     private boolean filled;

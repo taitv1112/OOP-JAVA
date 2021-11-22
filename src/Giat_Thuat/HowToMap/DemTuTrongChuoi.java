@@ -82,6 +82,8 @@ public class DemTuTrongChuoi {
         if (word.length() == 0) {
             return;
         }
+        // containsKey dung de kiem tra xem key co ton tai trong map hay khong
+        // vi du duoi la kiem tra xem word có tồn tại trong wordMap hay không
         if (wordMap.containsKey(word)) {
             int count = wordMap.get(word) + 1;
             wordMap.put(word, count);

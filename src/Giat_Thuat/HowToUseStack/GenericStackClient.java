@@ -1,10 +1,5 @@
 package Giat_Thuat.HowToUseStack;
 
-import java.util.Stack;
-
-import static Giat_Thuat.HowToUseStack.MyGenericStack.stackOfIStrings;
-import static Giat_Thuat.HowToUseStack.MyGenericStack.stackOfIntegers;
-
 public class GenericStackClient {
     public static void main(String[] args) {
 //        System.out.println("1. Stack of integers");

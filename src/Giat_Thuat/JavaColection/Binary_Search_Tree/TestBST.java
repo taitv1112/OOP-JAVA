@@ -15,11 +15,11 @@ public class TestBST {
         tree.insert(35);
         tree.insert(31);
         tree.insert(42);
-        System.out.println(tree.searchValue(100));
+//        System.out.println(tree.searchValue(100));
 //        tree.deleteValue(30);
         //traverse tree
-//        System.out.println("Inorder (sorted): ");
-//        tree.inorder();
+        System.out.println("Inorder (sorted): ");
+        tree.inorder();
 //        System.out.println("PostOder (sorted): ");
 //        tree.postOder();
 //        System.out.println("The number of nodes is: " + tree.getSize());
@@ -32,7 +32,6 @@ public class TestBST {
 //        queue.offer(4);
 //        queue.offer("abc");
 //        System.out.println(queue);
-
-
+//    tree.show();
     }
 }
