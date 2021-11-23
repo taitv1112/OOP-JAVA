@@ -42,4 +42,5 @@ public class ReadFileExample {
         ReadFileExample readfileEx = new ReadFileExample();
         readfileEx.readFileText(path);
     }
+
 }
