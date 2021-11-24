@@ -28,5 +28,6 @@ public class CopyFileText {
         File f_0 = new File("C:\\Users\\Lovin\\IdeaProjects\\OOP-JAVA\\src\\JavaIO\\number.txt");
         File f_0_copy = new File("C:\\Users\\Lovin\\IdeaProjects\\OOP-JAVA\\src\\JavaIO\\numberCopy.txt");
         CopyFileText.copyAll(f_0,f_0_copy);
+        System.out.println("coppy ok");
     }
 }
