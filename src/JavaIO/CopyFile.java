@@ -4,8 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.Scanner;
 
-public class CopyFileText {
+public class CopyFile {
     public static void copyAll(File f1, File f2) {
         try {
             // Copy ban than no
@@ -25,9 +26,14 @@ public class CopyFileText {
     }
 
     public static void main(String[] args) {
-        File f_0 = new File("C:\\Users\\Lovin\\IdeaProjects\\OOP-JAVA\\src\\JavaIO\\number.txt");
-        File f_0_copy = new File("C:\\Users\\Lovin\\IdeaProjects\\OOP-JAVA\\src\\JavaIO\\numberCopy.txt");
-        CopyFileText.copyAll(f_0,f_0_copy);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập đường dẫn chứa tập tin cần coppy: ");
+        String filePath1 = sc.nextLine();
+        System.out.println("Nhập đường dẫn chứa tập tin cần coppy tới: ");
+        String filePath2 = sc.nextLine();
+        File f_0 = new File(filePath1);
+        File f_0_copy = new File(filePath2);
+        CopyFile.copyAll(f_0,f_0_copy);
         System.out.println("coppy ok");
     }
 }
